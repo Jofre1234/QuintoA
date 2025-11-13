@@ -2,7 +2,7 @@ from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-# Plantilla HTML con CSS embebido
+# Plantilla HTML con CSS embebido y favicon vacío
 html_template = """
 <!DOCTYPE html>
 <html lang="es">
@@ -10,6 +10,8 @@ html_template = """
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página Bonita con Flask</title>
+    <!-- Favicon vacío para evitar 404 -->
+    <link rel="icon" href="data:,">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,7 +23,7 @@ html_template = """
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         header {
             font-size: 3em;
@@ -58,7 +60,7 @@ html_template = """
 <body>
     <header>¡Bienvenido a mi Página!</header>
     <p>Esta página está construida completamente en Flask con HTML y CSS embebidos en un solo archivo <strong>app.py</strong>.</p>
-    <button onclick="alert('Hola! Gracias por visitar.')">Haz clic aquí</button>
+    <button onclick="alert('¡Hola! Gracias por visitar.')">Haz clic aquí</button>
     <footer>© 2025 Mi Página Flask</footer>
 </body>
 </html>
